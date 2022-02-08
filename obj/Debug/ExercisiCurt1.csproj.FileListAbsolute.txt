@@ -1,0 +1,7 @@
+C:\Users\Marco\source\repos\ExercisiCurt1\ExercisiCurt1\bin\Debug\ExercisiCurt1.exe.config
+C:\Users\Marco\source\repos\ExercisiCurt1\ExercisiCurt1\bin\Debug\ExercisiCurt1.exe
+C:\Users\Marco\source\repos\ExercisiCurt1\ExercisiCurt1\bin\Debug\ExercisiCurt1.pdb
+C:\Users\Marco\source\repos\ExercisiCurt1\ExercisiCurt1\obj\Debug\ExercisiCurt1.csproj.AssemblyReference.cache
+C:\Users\Marco\source\repos\ExercisiCurt1\ExercisiCurt1\obj\Debug\ExercisiCurt1.csproj.CoreCompileInputs.cache
+C:\Users\Marco\source\repos\ExercisiCurt1\ExercisiCurt1\obj\Debug\ExercisiCurt1.exe
+C:\Users\Marco\source\repos\ExercisiCurt1\ExercisiCurt1\obj\Debug\ExercisiCurt1.pdb
