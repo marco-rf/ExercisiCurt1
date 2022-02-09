@@ -8,11 +8,18 @@ namespace ExercisiCurt1
 {
     class Program
     {
+             
         private static string[] opcions = new string[] { "PEDRA", "PAPER", "TISORA" };
-        private static string[] resultats = new string[]{ "Empatat", "Perds", "Guanyes" };
+        private static string[][] resultats = new string[3][]
+        {
+            new string[] {"Empat", "Perds", "Guanyes"},
+            new string[] { "Guanyes", "Empat", "Perds" },
+            new string[] { "Perds", "Guanyes", "Empat" }
+        };
 
         static void Main(string[] args)
         {
+            
             // PRUEBA PARA MIRAR SI FUNCIONA opcioUsuari
             /*if (opcioUsuari() > 0 && opcioUsuari() <= 3)
             {
@@ -37,7 +44,7 @@ namespace ExercisiCurt1
 
             for (int i = 0; i < opcions.Length; i++)
             {
-                Console.WriteLine(i+ 1 + "->" + opcions[i]); 
+                Console.WriteLine(i + 1 + "->" + opcions[i]);
             }
 
             input = Console.ReadLine();
@@ -55,6 +62,69 @@ namespace ExercisiCurt1
             }
         }
 
+        private static string comprovarQuiGuanya(int num1, int num2)
+        {
+            Random rnd = new Random();
+            int numeroAleatori = rnd.Next(0,4);
+            num2 = numeroAleatori;
 
+            Console.Write("Usuari: " + num1 + "\n");
+            Console.Write("Ordinador: " + num2 + "\n");
+
+            // POSIBILITAT PEDRA---------
+            if (num1 == 0 && num2 == 0)
+            {
+                return resultats[0][1];
             }
+
+            if (num1 == 0 && num2 == 1)
+            {
+                return resultats[0][1];
+            }
+
+            if (num1 == 0 && num2 == 2)
+            {
+                return resultats[0][2];
+            }
+
+            // --------------------------
+
+            // POSIBILITAT PAPER---------
+            if (num1 == 1 && num2 == 0)
+            {
+                return resultats[1][0];
+            }
+
+            if (num1 == 1 && num2 == 1)
+            {
+                return resultats[1][1];
+            }
+
+            if (num1 == 1 && num2 == 2)
+            {
+                return resultats[1][2];
+            }
+            // --------------------------
+            // POSIBILITAT TISORA---------
+            if (num1 == 2 && num2 == 0)
+            {
+                return resultats[2][0];
+            }
+
+            if (num1 == 2 && num2 == 1)
+            {
+                return resultats[2][1];
+            }
+
+            if (num1 == 1 && num2 == 2)
+            {
+                return resultats[2][2];
+            }
+
+
+            return "Tonto";
+        }
+
+
+    }
 }
