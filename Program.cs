@@ -20,10 +20,32 @@ namespace ExercisiCurt1
         static void Main(string[] args)
         {
             Random rnd = new Random();
-            int numeroAleatori = rnd.Next(0, 4);
+            int numeroAleatori = 0;
+            bool jugar = true;
+            int nRondes = 0; int nGuanyades = 0;
+            int inputUsuari;
 
-            Console.WriteLine("\t" + comprovarQuiGuanya(opcioUsuari(), numeroAleatori));
-            Console.ReadLine();
+            Console.WriteLine("WELCOME TO THE S.P.S GAME!\n");
+
+            while (jugar)
+            {
+                inputUsuari = opcioUsuari();
+                numeroAleatori = rnd.Next(0, 3);
+                comprovarQuiGuanya(inputUsuari, numeroAleatori);
+                nRondes += 1;
+
+                if (resultats[inputUsuari, numeroAleatori] == "Guanyes")
+                {
+                    nGuanyades += 1;
+                }
+
+                Console.WriteLine("Número de rondes: {0}\t Rondes guanyades: {1}", nRondes, nGuanyades);
+                jugar = continuarJugant();
+            }
+
+            //Console.WriteLine("\t" + comprovarQuiGuanya(opcioUsuari(), numeroAleatori));
+            //continuarJugant();
+            //Console.ReadLine();
         }
 
         private static int opcioUsuari()
@@ -41,9 +63,9 @@ namespace ExercisiCurt1
             int num = 0;
             Int32.TryParse(input, out num);
 
-            if (num > 0 && num <= 3)
+            if (num > 0 && num <= opcions.Length)
             {
-                return num -= 1;
+                return num - 1;
             }
 
             else
@@ -58,5 +80,24 @@ namespace ExercisiCurt1
             Console.WriteLine("\tOrdinador: " + opcions[num2]);
             return resultats[num1, num2];
         }
+
+        private static bool continuarJugant()
+        {
+            Console.WriteLine("\nVols continuar jugant (SI/NO)?");
+            string eleccio = Console.ReadLine().ToUpper();
+ 
+            if (eleccio == "SI")
+            {
+                return true;
+            }
+            if (eleccio == "NO")
+            {
+                return false;
+            }
+            else
+            {
+                return continuarJugant();
+            }
+        }   
     }
 }
