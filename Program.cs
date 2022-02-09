@@ -8,7 +8,6 @@ namespace ExercisiCurt1
 {
     class Program
     {
-
         private static string[] opcions = new string[] { "PEDRA", "PAPER", "TISORA" };
         private static string[,] resultats = new string[,]
         {
@@ -87,7 +86,7 @@ namespace ExercisiCurt1
             Console.WriteLine("\nVols continuar jugant (SI/NO)?");
             string eleccio = Console.ReadLine().ToUpper();
             Console.WriteLine();
- 
+
             if (eleccio == "SI")
             {
                 return true;
@@ -100,6 +99,6 @@ namespace ExercisiCurt1
             {
                 return continuarJugant();
             }
-        }   
+        }
     }
 }
