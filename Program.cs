@@ -25,7 +25,9 @@ namespace ExercisiCurt1
             int nRondes = 0; int nGuanyades = 0;
             int inputUsuari;
 
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("WELCOME TO THE S.P.S GAME!\n");
+            Console.ResetColor();
 
             while (jugar)
             {
@@ -42,17 +44,13 @@ namespace ExercisiCurt1
                 Console.WriteLine("Número de rondes: {0}\t Rondes guanyades: {1}", nRondes, nGuanyades);
                 jugar = continuarJugant();
             }
-
-            //Console.WriteLine("\t" + comprovarQuiGuanya(opcioUsuari(), numeroAleatori));
-            //continuarJugant();
-            //Console.ReadLine();
         }
 
         private static int opcioUsuari()
         {
             string input;
 
-            Console.WriteLine("Selecciona una opció (1, 2 o 3):");
+            Console.WriteLine("Selecciona una opció (1, 2 o 3):\n");
 
             for (int i = 0; i < opcions.Length; i++)
             {
@@ -76,8 +74,11 @@ namespace ExercisiCurt1
 
         private static string comprovarQuiGuanya(int num1, int num2)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\tUsuari: " + opcions[num1]);
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("\tOrdinador: " + opcions[num2]);
+            Console.ResetColor();
             return resultats[num1, num2];
         }
 
@@ -85,6 +86,7 @@ namespace ExercisiCurt1
         {
             Console.WriteLine("\nVols continuar jugant (SI/NO)?");
             string eleccio = Console.ReadLine().ToUpper();
+            Console.WriteLine();
  
             if (eleccio == "SI")
             {
