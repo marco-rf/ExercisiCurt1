@@ -12,8 +12,8 @@ namespace ExercisiCurt1
         private static string[,] resultats = new string[,]
         {
              {"Empat", "Perds", "Guanyes"},
-             { "Guanyes", "Empat", "Perds" },
-             { "Perds", "Guanyes", "Empat" }
+             {"Guanyes", "Empat", "Perds"},
+             {"Perds", "Guanyes", "Empat"}
         };
 
         static void Main(string[] args)
